@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+
+
+\usepackage[utf8]{inputenc}    % utf8 support
+\usepackage{graphicx}          % enable images input
+\usepackage{wrapfig}           % enable wraping images
+\usepackage{enumitem}          % control on enumerations
+\usepackage{color}             % for color text
+
+\usepackage[usenames,dvipsnames]{xcolor} % for more colors
+
+% bottom paragraphs
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+
+
+% enable hyperlinks and set its properties
+\usepackage[]{hyperref} % http://ctan.org/pkg/hyperref
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+% separate captions for equations
+\usepackage{caption}
+\DeclareCaptionType{mycapequ}[Equation][List of equations]
+\captionsetup[mycapequ]{labelformat=default}
+
+% margins setup
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+
+
+% author and title
+\title{\large{Seminar Design Patterns und Anti-Patterns} \\
+	\huge{\textsc{Architecture Anti-Patterns}}}
+\author{Arkadiusz Gabryś \\
+		Matrikel-Nr. 21895081 \\
+		Department of Compuer Science}
+
+
+% header and footer -------------------------------
+\usepackage{fancyhdr}    % include package
+\usepackage{lastpage}    % to get number of pages
+\pagestyle{fancy}        % set style
+
+% change header and footer width
+\newlength\FHoffset
+\setlength\FHoffset{0.6cm}
+
+\addtolength\headwidth{2\FHoffset}
+\fancyheadoffset{\FHoffset}
+\fancyfootoffset{\FHoffset}
+
+% header
+\fancyhead{}                                   % clear header
+\lhead{\textsc{Architecture Anti-Patterns}}    % write document title
+\renewcommand{\sectionmark}[1]{\markright{#1}} % get rid of section number
+\rhead{\rightmark}                             % print section name
+\renewcommand{\headrulewidth}{0pt}             % get rid of the horizontal line
+
+% footer
+\fancyfoot{}                                   % clear footer
+\fancyfoot[R]{\thepage~/~\pageref*{LastPage}}  % show page number on the right
+\renewcommand{\footrulewidth}{0pt}             % get rid of the horizontal line
+% -------------------------------------------------
+
+
+\begin{document}
+
+\maketitle                % create title
+
+\thispagestyle{empty}     % remove page number from table of content
+\input{Sections/abstract} % input Abstract without new line
+\tableofcontents          % create table of content
+\cleardoublepage          % flush all floats and create new page
+
+\setcounter{page}{1}      % reset pages counter
+
+\include{Sections/introduction}
+
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+\include{Sections/references}
+
+\end{document}
+

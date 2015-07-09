@@ -1,0 +1,10 @@
+*.lof
+*.aux
+*.log
+*.synctex.gz
+*.toc
+*.swp
+*.dvi
+*.out
+
+Materials/*
