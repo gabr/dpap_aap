@@ -1,13 +1,25 @@
 \section{Introduction}
+
+
+\subsection{Software Architecture}
+
 Good architecture is a critical factor in process of transforming high level models into actual implementation \cite{Nordic}. Unfortunately the engineering discipline of software architecture is relatively immature and there is even no official definition \cite{ArchitekturaWikiPl}.
 SEI provides three types of software architecture definitions \cite{SEI}:
 \begin{itemize}
-    \item Modern definition
-    \item Classic definitions
-    \item Bibliographic definitions
+    \item Modern definition -- The set of structures needed to reason about the system, which comprises software elements, relations among them, and properties of both.
+    \item Classic definitions -- An architecture is the set of significant decisions about the organization of a software system, the selection of the structural elements and their interfaces by which the system is composed, together with their behavior as specified in the collaborations among those elements, the composition of these structural and behavioral elements into progressively larger subsystems, and the architectural style that guides this organization.
+    \item Bibliographic definitions -- Software architecture is the study of the large-scale structure and performance of software systems. Important aspects of a system's architecture include the division of functions among system modules, the means of communication between modules, and the representation of shared information.
 \end{itemize}
+The common aspect of those definitions is the placement of software architecture as a layer between high level abstract model and specific implementation.
 
-Architecture Anti-Patterns ...
+
+\subsection{Architecture Anti-Patterns}
+
+Anti-Pattern is a commonly used solution that results in bad consequences, describing the practice itself as well as solution \cite{PatternsAndSoftware}.
+Architecture Anti-Patterns are those patterns that occur at architecture level, so called system-level or enterprise-level \cite{SurvivalGuide}.
+
+In this document, while describing anti-pattern, firstly the general form of a bad solution will be presented both with it causes. Next the main symptoms and consequences and after that some real life example will be presented to describe example solution.
+In case of anti-patterns there occur some exceptions, situations when an anti-pattern can be accepted and that will be the last chapter for each one of them.
 
 \begin{bottompar}
 This whole project (excluding graphics) was created using \LaTeX \ technology and its sources are available at \url{https://github.com/gabr/dpap_aap}
