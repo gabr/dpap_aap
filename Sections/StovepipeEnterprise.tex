@@ -2,11 +2,11 @@
 
 \subsection{Form \& Causes}
 
-Stovepipe Enterprise, also know as Island of Automation \cite{c2com} is a situation when multiple system within enterprise are designed independently at every level \cite{SurvivalGuide}. Those systems has potential to share data, functionality or whole subsystems but they don't.
+Stovepipe Enterprise, also know as Island of Automation \cite{c2com} is a situation when multiple system within enterprise are designed independently at every level \cite{Crisis}. Those systems has potential to share data, functionality or whole subsystems but they don't.
 
 Stovepipe metaphor isn't accidental. Stovepipe is the pipe which conducts smoke from a coal or wood-burning stove to it's chimney. There are two problems with such pipes and two similar problems will occur in case of stovepipe enterprise anti-pattern. The first problem is that burning wood produces corrosive substances that erode metal, so pipe must be constantly maintained and repaired in order to avoid leakage. Second problem is fact that stovepipes are never connected with each other to create one system. If one would have a two coals he would have two separate stovepipes to maintain.
 
-This analogy perfectly fits into stovepipe enterprise anti-pattern where we have separated systems which has to be maintained separately because of they layer separations. This and other problems will be discussed in the next chapter.
+This analogy perfectly fits into stovepipe enterprise anti-pattern where we have separated systems which has to be maintained separately because of they layer separation. This and other problems will be discussed in the next chapter.
 
 \begin{figure}[!h]
     \centering
@@ -15,16 +15,42 @@ This analogy perfectly fits into stovepipe enterprise anti-pattern where we have
     \label{fig:Systems}
 \end{figure}
 
-Causes of such situations are in general lac of standards, communication and laziness. When a company have global system standards, technology strategy and system profiles then even without teems and enterprise institutions communication such anti-pattern could be avoided. Lack of communication, lack of knowledge about technology standards being used in company and absence of horizontal interfaces in system integration solutions are the main causes of the stovepipe enterprise anti-pattern \cite{SurvivalGuide}.
+Causes of such situations are in general lac of standards, lac of communication and laziness. When a company have global system standards, technology strategy and system profiles then even without teems and enterprise institutions communication such anti-pattern could be avoided. Lack of communication, lack of knowledge about technology standards being used in company and absence of horizontal interfaces in system integration solutions are the main causes of the stovepipe enterprise anti-pattern \cite{SurvivalGuide}.
 
 
 \subsection{Symptoms \& Consequences}
 
-
+The main symptoms and consequences of the stovepipe enterprise anti-pattern are \cite{SurvivalGuide}:
+\begin{itemize}
+	\item Lack of software reuse between enterprise systems
+	\item Lack of interoperability between enterprise systems
+	\item Brittle systems
+	\item Monolithic systems
+	\item Undocumented architectures
+	\item Inability to extend systems
+	\item Excessive maintenance costs
+	\item Employee turnover may causes project discontinuity and maintenance problems
+\end{itemize}
+Many of those consequences can be notices at the early stages of system creation. If some subsystem can be maintained only by one employ this is probably separate "island" of the system. If system architecture is known only to system team and there is no enterprise standard then undocumented architecture problem will occur. Also no one else outside the team would be able to quickly join to the team or connect two different systems.
 
 
 \subsection{Example - authorization system}
 
+As an example of the stovepipe enterprise anti-pattern will be considered a e-mail system and calendar system within one company.
+
+Both systems besides they unique data had to store information about they users and passwords. In enterprise where are no standards on database layer defined we can expect that those systems can use different technologies, naming conventions and will probably not share the information. 
+\hyperref[fig:DatabaseExample]{Figure \ref{fig:DatabaseExample}} shows tables for those two systems. In case where those systems uses different databases technologies the gap between database layer is even higher.
+
+\begin{figure}[htp]
+\subcaptionbox{E-mail system - example tables in MySQL database\label{fig:EmailSystem}}{\includegraphics[width=.48\linewidth]{Images/semail.png}}\hfill%
+\subcaptionbox{Calendar system - example tables in MSSSL database\label{fig:CalendarSystem}}{\includegraphics[width=.48\linewidth]{Images/secalendar.png}}%
+\caption[Stovepipe Enterprise Systems database example]{Stovepipe Enterprise Systems database example - different tables in different databases technologies}
+\label{fig:DatabaseExample}
+\end{figure}
+
+
 \subsection{Solution}
+
+
 
 \subsection{Exceptions}
