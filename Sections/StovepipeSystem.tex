@@ -6,12 +6,34 @@ Stovepipe System Anti-Pattern occur within one system. Two definitions can be fo
 \item Term describes system developed to solve a specific problem and containing data that cannot be easily shared with other systems \cite{c2com}.
 \item System where no abstraction layers are used to communicate between subsystem which results in situation where everything is connected with everything \cite{Virtual}.
 \end{itemize}
-The first one is more general and applies to all stovepipe anti-patterns in general.
+The first one is more general and applies to all stovepipe anti-patterns.
 The second one will be further discussed in next chapters.
 
+It happens in systems which integrates different subsystems to achieve they goal. But direct causes of this anit-pattern is no architectural vision which leads to lack of already mentioned abstraction in the system providing tight coupling between implemented subsystems \cite{SurvivalGuide}.
 
 
 \subsection{Distinction}
+
+When describing stovepipe anti-patterns the clear distinction between them should be provided. Example difference are listed in \hyperref[tab:Distinction]{figure \ref{tab:Distinction}}.
+
+\def\arraystretch{1.6}
+\begin{center}
+\begin{figure}[!h]
+	\begin{tabular}{|p{.48\linewidth}|p{.48\linewidth}|}
+	    \hline
+	    Stovepipe Enterprise & Stovepipe System \\
+	    \hline
+	    Multiple systems & One system \\
+	    Lack of common layer between systems & Lack of common abstract layer between subsystems \\
+	    Caused by: & Caused by: \\
+	    \ - Lack of communication & \ - Lack of architectural vision \\
+	    \ - Lack of standards & \  - Tight coupling between classes \\
+	    \hline
+	\end{tabular}
+\caption{Distinction between Stovepipe Enterprise and Stovepipe System}
+\label{tab:Distinction}
+\end{figure}
+\end{center}
 
 \subsection{Symptoms \& Consequences}
 
