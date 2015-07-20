@@ -55,7 +55,7 @@ Such systems require double work in case of changing any user data in any of tho
 \subsection[Solution]{Solution*}
 
 \footnote{Due to lack of other source the whole chapter is based on \cite{SurvivalGuide}}
-Coordination of technologies at each level is necessary to both avoid and solve stovepipe enterprise problem. Defining standards at each level is the first step and it should be done in order from the lowest level (high-level architecture) to the highest (API specifications, extensions etc).
+Coordination of technologies at each level is necessary to both avoid and solve stovepipe enterprise problem. Providing any enterprise design pattern will help future refactorization. Defining standards at each level is the first step and it should be done in order from the lowest level (high-level architecture) to the highest (API specifications, extensions etc).
 
 Topic is new but the problem is old, so many large enterprises developed conventions for the definitions of object-oriented architectures that can be applied to many organizations. The key is to define detailed interoperability \footnote{Property of a product or system, whose interfaces are completely understood, to work with other products or systems, present or future, without any restricted access or implementation. \cite{Interoperability}} conventions across systems of large-scale architectures. And at the same time address technology strategy and requirements. Experience has shown that four requirements models and four specification models has to be defined in order to properly scope interoperability between layer.
 
@@ -66,6 +66,7 @@ Topic is new but the problem is old, so many large enterprises developed convent
     \label{fig:ScopingOfInteroperability}
 \end{figure}
 Detailed description of each layer will not be discussed.
+
 
 \newpage
 Based on that, the solution for the example database layer show on \hyperref[fig:DatabaseExample]{figure \ref{fig:DatabaseExample}} can be provided.
@@ -81,4 +82,8 @@ The first step will be to define one database technology, then the naming conven
 
 \subsection{Exceptions}
 
+Stovepipe Enterprise Anti-Pattern may occur in situations in which is acceptable.
+In new systems and application is not, however when companies grow by takeover or merge occurrence of this anti-pattern can be expected. Vendor Lock-In Anti-Pattern can be an other exception \cite{SurvivalGuide}.
+The situation when company grows by itself, when it starts from few small applications which are not well designed, there will be a point problems connected to stovepipe enterprise will show up \cite{Dragon}.
 
+Besides Vendor Lock-In exception, all others are just temporary and should be refactored at the earliest state as possible.
