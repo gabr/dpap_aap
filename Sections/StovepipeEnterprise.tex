@@ -16,7 +16,7 @@ This analogy perfectly fits into stovepipe enterprise anti-pattern where we have
 \end{figure}
 
 Causes of such situations are in general lac of standards, lac of communication and laziness. When a company have global system standards, technology strategy and system profiles then even without teems and enterprise institutions communication such anti-pattern could be avoided. Lack of communication, lack of knowledge about technology standards being used in company and absence of horizontal interfaces in system integration solutions are the main causes of the stovepipe enterprise anti-pattern \cite{SurvivalGuide}.
-
+It can also came from rapid expansion of the company and systems - from few small applications to big enterprise systems \cite{Dragon}.
 
 \subsection{Symptoms \& Consequences}
 
@@ -51,9 +51,34 @@ Both systems besides they unique data had to store information about they users 
 Not only the the separation of tables is the symptom of the stovepipe enterprise anti-pattern but also the different naming conventions and \emph{Id} field data type.
 Such systems require double work in case of changing any user data in any of those two systems. So it is inconvenient both in development and in administration.
 
-\subsection{Solution}
+\newpage
+\subsection[Solution]{Solution*}
 
-Coordination of technologies at each level is necessary to both avoid and solve stovepipe enterprise problem. Defining standards at each level is the first step and it should be done in order from the lowest level (high-level architecture) to the highest (API specifications, extensions etc) \cite{SurvivalGuide}.
+\footnote{Due to lack of other source the whole chapter is based on \cite{SurvivalGuide}}
+Coordination of technologies at each level is necessary to both avoid and solve stovepipe enterprise problem. Defining standards at each level is the first step and it should be done in order from the lowest level (high-level architecture) to the highest (API specifications, extensions etc).
+
+Topic is new but the problem is old, so many large enterprises developed conventions for the definitions of object-oriented architectures that can be applied to many organizations. The key is to define detailed interoperability \footnote{Property of a product or system, whose interfaces are completely understood, to work with other products or systems, present or future, without any restricted access or implementation. \cite{Interoperability}} conventions across systems of large-scale architectures. And at the same time address technology strategy and requirements. Experience has shown that four requirements models and four specification models has to be defined in order to properly scope interoperability between layer.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.3]{Images/enterprisesolution.png}
+    \caption[Scoping of interoperability]{Scoping of interoperability \cite{SurvivalGuide}}
+    \label{fig:ScopingOfInteroperability}
+\end{figure}
+Detailed description of each layer will not be discussed.
+
+\newpage
+Based on that, the solution for the example database layer show on \hyperref[fig:DatabaseExample]{figure \ref{fig:DatabaseExample}} can be provided.
+The first step will be to define one database technology, then the naming conventions and types standards. After that one table for all user for both systems can be defined as it is shown on \hyperref[fig:DatabaseExample]{figure \ref{fig:DatabaseExampleSolution}}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Images/sesolution.png}
+    \caption[Example database layer - solution]{Example database layer - solution}
+    \label{fig:DatabaseExampleSolution}
+\end{figure}
 
 
 \subsection{Exceptions}
+
+
