@@ -54,15 +54,42 @@ In the example all subsystems are connected together and there is no abstraction
 \begin{figure}[!h]
     \centering
     \includegraphics[scale=1.3]{Images/ssexample.png}
-    \caption[Stovepipe System Example]{Stovepipe System - example diagram \cite{ClientServer}}
+    \caption[Stovepipe System Example]{Stovepipe System - example diagram \cite{Solutions}}
     \label{fig:StovepipeSystemExample}
 \end{figure}
 
 \subsection{Solution}
 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=1]{Images/CommonInterface.png}
+    \caption[Interface between subsystems]{Interface between subsystems \cite{Solutions}}
+    \label{fig:CommonInterface}
+\end{figure}
+Refactoring of stovepipe system begins from extracting abstract models for subsystems. Abstract models will allow reuse of code and adding new subsystem will not require code changes in any of clients. Discovering the appropriate abstraction is the key to defining component interfaces. This will model subsystems interoperability without exposing unnecessary differences between subsystems \cite{Solutions}.
 
+Summarizing: non of the subsystems should communicate without abstraction layer.
+
+\newpage
+
+For our example proper abstraction architecture may look like it is shown on \hyperref[fig:StovepipeSystemExampleSolution]{figure \ref{fig:StovepipeSystemExampleSolution}}.
+From base graph shown on \hyperref[fig:StovepipeSystemExample]{figure \ref{fig:StovepipeSystemExample}} three types of subsystems interfaces can be extracted along with client interface - because each of the client is also connected with other clients. Those types are:
+\begin{itemize}
+\item Input devices
+\item Output devices
+\item Information sources
+\end{itemize}
+and client interface.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.3]{Images/ssexamplesolution.png}
+    \caption[Stovepipe System Example Solution]{Stovepipe System - abstraction to example diagram \cite{Solutions}}
+    \label{fig:StovepipeSystemExampleSolution}
+\end{figure}
+
+There is now direct communication and no tight coupling between components which allows to easily add or remove subsystems and clients.
 
 \subsection{Exceptions}
 
-There are two situations which justify to follow this anti-pattern consciously – the exploration
-of a yet unknown domain and the quick development of a partly functional prototype \cite{Virtual}.
+There are situations which justify this anit-pattern in project. One of those is exploration of new or unknown domain - creating prototypes. Also quick development may end up as stovepipe system but this is acceptable for achieving rapid solutions \cite{SurvivalGuide,Virtual}.
