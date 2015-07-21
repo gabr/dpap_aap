@@ -4,7 +4,7 @@
 Stovepipe System Anti-Pattern occur within one system. Two definitions can be found:
 \begin{itemize}
 \item Term describes system developed to solve a specific problem and containing data that cannot be easily shared with other systems \cite{c2com}.
-\item System where no abstraction layers are used to communicate between subsystem which results in situation where everything is connected with everything \cite{Virtual}.
+\item System where no abstraction layers are used to communicate between subsystem which results in situation where everything is connected with everything \cite{Virtual,Solutions}.
 \end{itemize}
 The first one is more general and applies to all stovepipe anti-patterns.
 The second one will be further discussed in next chapters.
@@ -37,10 +37,32 @@ When describing stovepipe anti-patterns the clear distinction between them shoul
 
 \subsection{Symptoms \& Consequences}
 
-One of the main symptoms is difficulty in both modifying the system and describing its architecture. This leads to large semantic gap between architecture documentation and implementation and software will probably not meet the user expectations even when code is comply with the paper requirements \cite{Virtual}. System maintenance will become increasingly costly with both time and money \cite{SurvivalGuide,Virtual}. Developers will have to invent workarounds and most attempts to automate system will fail \cite{SurvivalGuide}.
+One of the main symptoms is difficulty in both modifying the system and describing its architecture. This leads to large semantic gap between architecture documentation and implementation and software will probably not meet the user expectations even when code is comply with the paper requirements \cite{Virtual}. System maintenance will become increasingly costly with both time and money \cite{SurvivalGuide,Virtual,Solutions}. Developers will have to invent workarounds and most attempts to automate system will fail \cite{SurvivalGuide}.
 
+\newpage
 \subsection{Example}
+
+Example stovepipe system shown on \hyperref[fig:StovepipeSystemExample]{figure \ref{fig:StovepipeSystemExample}} can be divided into four types of components:
+\begin{itemize}
+	\item Clients
+	\item Scanners
+	\item Printers
+	\item Databases
+\end{itemize}
+In the example all subsystems are connected together and there is no abstraction layers between components. Each client has its own code to manage all devices and other clients.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=1.3]{Images/ssexample.png}
+    \caption[Stovepipe System Example]{Stovepipe System - example diagram \cite{ClientServer}}
+    \label{fig:StovepipeSystemExample}
+\end{figure}
 
 \subsection{Solution}
 
+
+
 \subsection{Exceptions}
+
+There are two situations which justify to follow this anti-pattern consciously – the exploration
+of a yet unknown domain and the quick development of a partly functional prototype \cite{Virtual}.
